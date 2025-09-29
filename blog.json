@@ -1,0 +1,23 @@
+[
+  {
+"id": 1,
+"title": "Understanding JavaScript Closures",
+"content": "JavaScript closures are functions that have access to their outer function's scope, even when the outer function has returned.",
+"author": "John Doe",
+"date": "2023-04-01"
+  },
+  {
+"id": 2,
+"title": "CSS Grid vs Flexbox",
+"content": "CSS Grid and Flexbox are both powerful layout systems, but they serve different purposes and are used in different contexts.",
+"author": "Jane Smith",
+"date": "2023-03-15"
+  },
+  {
+"id": 3,
+"title": "Introduction to React",
+"content": "React is a JavaScript library for building user interfaces. It's maintained by Facebook and a community of developers.",
+"author": "Meta Llama",
+"date": "2023-02-20"
+  }
+]

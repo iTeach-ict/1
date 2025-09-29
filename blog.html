@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Ohia Samuel | Blog</title>
+    <link rel="shortcut icon" href="./pass.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="logo"><a href="./index.html"><img src="logo_sm.png" width="150px" alt="logo"></a></div>
+        </nav>
+
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" id="homeLink"
+                class="text-2xl font-bold text-indigo-600 transition-colors duration-300 hover:text-indigo-800" style="color: white; font-size: 15px; background-color: antiquewhite; color: #6366f1; padding: 4px; border-radius: 6px 0px;">Home</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#featured"
+                    class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium" style="color: white;">Featured</a>
+                <a href="#all-posts" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium" style="color: white;">All
+                    Posts</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium" style="color: white;">About</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium" style="color: white;">Contact</a>
+            </nav>
+            <button id="mobile-menu-button"
+                class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner pb-4">
+            <nav class="flex flex-col space-y-2 px-4">
+                <a href="#featured"
+                    class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 py-2 rounded-lg font-medium">Featured</a>
+                <a href="#all-posts"
+                    class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 py-2 rounded-lg font-medium">All
+                    Posts</a>
+                <a href="#"
+                    class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 py-2 rounded-lg font-medium">About</a>
+                <a href="#"
+                    class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 py-2 rounded-lg font-medium">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+<head>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+        }
+
+        #navbar .logo{
+            padding-left:60px ;
+            padding-top: 10px;
+        }
+
+        .blog-post-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+            color: #4b5563;
+        }
+
+        .blog-post-content h2,
+        .blog-post-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .blog-post-content ul,
+        .blog-post-content ol {
+            margin-bottom: 1.5rem;
+            list-style-position: inside;
+        }
+
+        .blog-post-content li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .transition-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .transition-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reviews-container-scroll {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .review-card {
+            border-left: 4px solid #6366f1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <!-- Main Content Container -->
+    <main id="main-content" class="container mx-auto px-4 py-8 max-w-5xl">
+        <!-- Hero Section -->
+        <section class="text-center py-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl shadow-lg mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-800 mb-4 fade-in">Knowledge is the Journey</h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl mx-auto fade-in">Dive into our collection of
+                articles designed to expand your mind and enrich your life. From science to art, we cover it all.</p>
+        </section>
+
+        <!-- Featured Posts Section -->
+        <section id="featured" class="py-8 transition-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Featured Articles</h2>
+            <div id="featured-posts-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Featured posts will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- All Posts Section -->
+        <section id="all-posts" class="py-8 transition-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">All Articles</h2>
+            <div id="all-posts-container" class="space-y-8">
+                <!-- All posts will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- Dynamic Post Content Section (initially hidden) -->
+        <section id="post-view" class="hidden py-8">
+            <button id="back-to-home"
+                class="mb-8 flex items-center text-indigo-600 hover:underline transition-colors duration-300">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Back to Blog
+            </button>
+            <div id="post-content" class="bg-white rounded-xl shadow-lg p-6 md:p-10 fade-in">
+                <!-- Post content will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Add Post Section -->
+        <section id="add-post-section" class="py-12 transition-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Add a New Article</h2>
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-10 max-w-2xl mx-auto">
+                <form id="add-post-form" class="space-y-6">
+                    <div>
+                        <label for="post-title" class="block text-sm font-medium text-gray-700">Article Title</label>
+                        <input type="text" id="post-title" name="post-title" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+                    </div>
+                    <div>
+                        <label for="post-author" class="block text-sm font-medium text-gray-700">Author Name</label>
+                        <input type="text" id="post-author" name="post-author" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+                    </div>
+                    <div>
+                        <label for="post-summary" class="block text-sm font-medium text-gray-700">Summary</label>
+                        <textarea id="post-summary" name="post-summary" rows="3" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"></textarea>
+                    </div>
+                    <div>
+                        <label for="post-content-input" class="block text-sm font-medium text-gray-700">Full Content
+                            (HTML or plain text)</label>
+                        <textarea id="post-content-input" name="post-content-input" rows="8" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"></textarea>
+                    </div>
+                    <div>
+                        <label for="post-image" class="block text-sm font-medium text-gray-700">Image URL</label>
+                        <input type="url" id="post-image" name="post-image"
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
+                            placeholder="e.g., https://placehold.co/1200x600">
+                    </div>
+                    <div class="flex justify-end space-x-4">
+                        <button type="button" id="clear-form-button"
+                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-gray-700 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                            Clear
+                        </button>
+                        <button type="submit"
+                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Add Post
+                        </button>
+                    </div>
+                </form>
+                <div id="add-post-status" class="mt-4 text-center hidden"></div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews-section" class="py-12 transition-section">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">What Our Readers Say</h2>
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-10 max-w-2xl mx-auto">
+                <div id="reviews-container" class="reviews-container-scroll space-y-6 mb-8">
+                    <!-- Reviews will be dynamically loaded here -->
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Add Your Review</h3>
+                <form id="add-review-form" class="space-y-6">
+                    <div>
+                        <label for="reviewer-name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                        <input type="text" id="reviewer-name" name="reviewer-name" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+                    </div>
+                    <div>
+                        <label for="reviewer-rating" class="block text-sm font-medium text-gray-700">Rating</label>
+                        <select id="reviewer-rating" name="reviewer-rating" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+                            <option value="5">★★★★★</option>
+                            <option value="4">★★★★☆</option>
+                            <option value="3">★★★☆☆</option>
+                            <option value="2">★★☆☆☆</option>
+                            <option value="1">★☆☆☆☆</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="reviewer-text" class="block text-sm font-medium text-gray-700">Your Review</label>
+                        <textarea id="reviewer-text" name="reviewer-text" rows="4" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"></textarea>
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="submit"
+                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Submit Review
+                        </button>
+                    </div>
+                </form>
+                <div id="add-review-status" class="mt-4 text-center hidden"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-6 mt-12">
+        <p>&copy; 2025 Ohia Samuel Nwaudo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Sample blog post data
+            let posts = [{
+                id: '1',
+                title: 'The Future of Online Learning',
+                author: 'Jane Doe',
+                date: 'October 26, 2024',
+                summary: 'Explore how technology is revolutionizing education, making learning more accessible and personalized than ever before. We look at AI, VR, and collaborative platforms.',
+                content: `
+                    <p>The landscape of education is undergoing a seismic shift, driven by rapid advancements in technology. The traditional classroom model, while still vital, is being complemented and, in some cases, transformed by innovative online learning solutions. This new era of education promises greater accessibility, personalization, and engagement for learners worldwide.</p>
+                    <p>One of the most significant drivers of this change is Artificial Intelligence (AI). AI-powered tools can analyze a student's performance and learning style to create customized study plans and provide instant, automated feedback. This level of personalization was previously unattainable in a large classroom setting.</p>
+                    <h2>Virtual and Augmented Reality in the Classroom</h2>
+                    <p>Imagine dissecting a frog in a virtual reality environment or exploring the solar system from your living room. Virtual Reality (VR) and Augmented Reality (AR) are making these immersive experiences a reality. These technologies can turn abstract concepts into tangible, memorable experiences, significantly enhancing understanding and retention. For instance, medical students can practice complex surgeries in a risk-free virtual environment, and history students can walk through ancient Roman cities.</p>
+                    <h2>The Rise of Collaborative Learning Platforms</h2>
+                    <p>Online learning is no longer a solitary activity. Modern platforms are designed to foster collaboration and community. Features like discussion forums, group projects, and live-streaming lectures allow students to interact with peers and instructors from different parts of the globe. This not only enriches the learning experience but also prepares students for the collaborative nature of the modern workplace.</p>
+                    <h3>Challenges and Opportunities</h3>
+                    <p>While the benefits are clear, the transition to online learning is not without its challenges. Issues such as digital divide, maintaining student motivation, and ensuring academic integrity need to be addressed. However, these challenges also present new opportunities for innovation. Educators and technologists are working together to create solutions that make online learning more equitable, engaging, and effective for everyone.</p>
+                `,
+                image: 'https://images.pexels.com/photos/4145353/pexels-photo-4145353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                featured: true
+            }, {
+                id: '2',
+                title: 'The Importance of Financial Literacy for Young Adults',
+                author: 'John Smith',
+                date: 'October 20, 2024',
+                summary: 'Financial literacy is a critical life skill often overlooked in traditional education. This article outlines why understanding money is crucial for a secure future.',
+                content: `
+                    <p>In a world where financial decisions are a daily necessity, financial literacy is more important than ever. For many young adults, the transition from school to independent life can be fraught with financial challenges, from managing debt to saving for retirement. This article explores why a solid foundation in financial literacy is not just a nice-to-have, but a crucial life skill.</p>
+                    <p>Financial literacy encompasses a range of skills, from creating a budget and managing debt to understanding investments and insurance. These skills are essential for building a stable and secure financial future. Without them, individuals are more susceptible to poor financial decisions, which can lead to long-term economic hardship.</p>
+                    <h2>Budgeting and Saving</h2>
+                    <p>The first step to financial freedom is mastering the art of budgeting. A budget is a roadmap for your money, helping you track income and expenses and allocate funds towards savings and financial goals. Learning to live within your means and consistently save a portion of your income is a habit that pays dividends over a lifetime. It allows you to build an emergency fund, save for a down payment on a home, or invest in your future.</p>
+                    <h3>Understanding Debt and Credit</h3>
+                    <p>Not all debt is created equal. While some debt, like a mortgage or student loan, can be a useful tool, high-interest debt from credit cards can be a significant burden. Understanding how credit scores work and the impact of debt on your financial health is crucial. A good credit score can unlock better interest rates on loans and make it easier to rent an apartment or get a car.</p>
+                    <h2>Investing for the Future</h2>
+                    <p>For young adults, time is their greatest asset when it comes to investing. The power of compound interest means that even small, consistent investments can grow into a substantial nest egg over several decades. This section will introduce basic investing concepts, such as stocks, bonds, and mutual funds, and stress the importance of starting early.</p>
+                `,
+                image: 'https://images.pexels.com/photos/6303861/pexels-photo-6303861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                featured: true
+            }, {
+                id: '3',
+                title: 'The Power of Mindful Living',
+                author: 'Sarah Chen',
+                date: 'October 15, 2024',
+                summary: 'Mindfulness is more than just a buzzword; it’s a practice that can transform your daily life, reducing stress and increasing focus and well-being.',
+                content: `
+                    <p>In our fast-paced, always-on world, it's easy to feel overwhelmed and disconnected. The practice of mindfulness offers a powerful antidote, helping us to slow down, be present, and find a greater sense of calm and clarity. Mindfulness is the practice of being aware of the present moment without judgment. It’s about paying attention to your thoughts, feelings, and bodily sensations as they arise, and simply observing them.</p>
+                    <h2>Benefits of Mindfulness</h2>
+                    <p>Studies have shown that a regular mindfulness practice can have numerous benefits for both mental and physical health. It can reduce stress and anxiety, improve focus and concentration, and enhance emotional regulation. By training your mind to be present, you can break the cycle of rumination and worry about the past or future.</p>
+                    <h3>Simple Ways to Practice Mindfulness</h3>
+                    <p>You don't need to be a monk to practice mindfulness. It can be integrated into your daily routine in simple ways:</p>
+                    <ul>
+                        <li><strong>Mindful Breathing:</strong> Take a few moments to sit quietly and focus on the sensation of your breath. Notice the inhales and exhales without trying to change them.</li>
+                        <li><strong>Mindful Eating:</strong> Pay full attention to your food. Notice the colors, textures, and flavors. Chew slowly and savor each bite.</li>
+                        <li><strong>Mindful Walking:</strong> As you walk, pay attention to the feeling of your feet on the ground and the movement of your legs. Notice the sights and sounds around you.</li>
+                    </ul>
+                    <p>By starting with just a few minutes a day, you can begin to cultivate a more mindful and peaceful approach to life.</p>
+                `,
+                image: 'https://images.pexels.com/photos/3771569/pexels-photo-3771569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                featured: true
+            }, {
+                id: '4',
+                title: 'Exploring the Wonders of the Solar System',
+                author: 'Alex Carter',
+                date: 'October 12, 2024',
+                summary: 'Take a journey through our cosmic neighborhood. This post provides an overview of the planets, moons, and other celestial bodies that call our solar system home.',
+                content: `
+                    <p>The solar system is a vast and mysterious place, filled with wonders that have captivated humanity for millennia. From the scorching surface of Mercury to the icy moons of Jupiter, each celestial body has a unique story to tell. This article provides a guided tour of our cosmic neighborhood, offering a glimpse into the incredible diversity of our solar system.</p>
+                    <h2>The Inner Planets: Terrestrial Worlds</h2>
+                    <p>The four inner planets—Mercury, Venus, Earth, and Mars—are known as the terrestrial planets. They are rocky, dense, and relatively small. Mercury is the closest to the sun and has extreme temperature fluctuations. Venus, with its thick, toxic atmosphere, is the hottest planet in our solar system. Earth, our home, is a unique world teeming with life, and Mars, the "Red Planet," has long been a subject of fascination for its potential to harbor life.</p>
+                    <h3>The Outer Planets: Gas Giants</h3>
+                    <p>Beyond the asteroid belt lie the four outer planets, or gas giants: Jupiter, Saturn, Uranus, and Neptune. These planets are massive, composed primarily of hydrogen and helium, and surrounded by rings and numerous moons. Jupiter is the largest planet, with its iconic Great Red Spot—a massive storm that has raged for centuries. Saturn is famous for its stunning and complex system of rings, while Uranus and Neptune are often called "ice giants" due to their composition of water, methane, and ammonia ice.</p>
+                    <h2>Beyond the Planets</h2>
+                    <p>Our solar system is also home to a multitude of other fascinating objects, including dwarf planets like Pluto, countless asteroids in the asteroid belt, and comets that travel from the far reaches of the solar system. The discovery of these objects continues to expand our understanding of the universe and our place within it.</p>
+                `,
+                image: 'https://images.pexels.com/photos/11082530/pexels-photo-11082530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                featured: false
+            }, {
+                id: '5',
+                title: 'A Guide to Healthy Eating',
+                author: 'Maria Rodriguez',
+                date: 'October 8, 2024',
+                summary: 'Learn the fundamentals of a balanced diet and how to make smart food choices. This guide breaks down macronutrients, micronutrients, and the importance of hydration.',
+                content: `
+                    <p>Eating healthy is one of the most powerful things you can do for your body and mind. It's not about strict diets or depriving yourself; it's about making smart, informed choices that fuel your body and support your well-being. This guide provides a foundational understanding of what a balanced diet looks like and offers practical tips for healthy eating.</p>
+                    <h2>Understanding Macronutrients</h2>
+                    <p>Macronutrients—carbohydrates, proteins, and fats—are the building blocks of your diet. Carbohydrates are your body's primary source of energy. Proteins are essential for building and repairing tissues. Fats, in moderation, are crucial for brain health and vitamin absorption. A balanced diet includes a healthy mix of all three.</p>
+                    <h3>The Role of Micronutrients</h3>
+                    <p>Micronutrients, which include vitamins and minerals, are vital for maintaining overall health and preventing disease. They play a critical role in everything from immune function to metabolism. A diet rich in fruits and vegetables is the best way to ensure you are getting a wide range of these essential nutrients.</p>
+                    <h2>Hydration is Key</h2>
+                    <p>Water is often overlooked but is fundamental to good health. It plays a crucial role in regulating body temperature, transporting nutrients, and flushing out waste. Staying hydrated throughout the day is one of the simplest yet most effective ways to support your body's functions.</p>
+                    <h3>Practical Tips for Healthy Eating</h3>
+                    <p>Making small changes can have a big impact. Try to:</p>
+                    <ul>
+                        <li>Incorporate a variety of fruits and vegetables into every meal.</li>
+                        <li>Choose whole grains over refined grains.</li>
+                        <li>Opt for lean protein sources like chicken, fish, and legumes.</li>
+                        <li>Limit your intake of processed foods, sugary drinks, and saturated fats.</li>
+                    </ul>
+                    <p>By focusing on these principles, you can build a sustainable, healthy eating pattern that nourishes your body for years to come.</p>
+                `,
+                image: 'https://images.pexels.com/photos/163886/pexels-photo-163886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                featured: false
+            }];
+
+            // Sample review data
+            let reviews = [{
+                name: 'Alex Johnson',
+                rating: 5,
+                review: 'This blog is a fantastic resource! The articles are well-written and easy to understand.',
+                date: 'October 25, 2024'
+            }, {
+                name: 'Emily Williams',
+                rating: 4,
+                review: 'Great content, very informative. I would love to see more articles on technology topics.',
+                date: 'October 24, 2024'
+            }, {
+                name: 'Michael Brown',
+                rating: 5,
+                review: 'A great source for learning new things. The design is clean and easy to navigate.',
+                date: 'October 23, 2024'
+            }];
+
+            const featuredPostsContainer = document.getElementById('featured-posts-container');
+            const allPostsContainer = document.getElementById('all-posts-container');
+            const mainContent = document.getElementById('main-content');
+            const postView = document.getElementById('post-view');
+            const postContent = document.getElementById('post-content');
+            const backToHomeButton = document.getElementById('back-to-home');
+            const homeLink = document.getElementById('homeLink');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const addPostForm = document.getElementById('add-post-form');
+            const clearFormButton = document.getElementById('clear-form-button');
+            const addPostStatus = document.getElementById('add-post-status');
+            const reviewsContainer = document.getElementById('reviews-container');
+            const addReviewForm = document.getElementById('add-review-form');
+            const addReviewStatus = document.getElementById('add-review-status');
+
+            // Toggle mobile menu
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Function to render posts
+            function renderPosts() {
+                featuredPostsContainer.innerHTML = '';
+                allPostsContainer.innerHTML = '';
+
+                const featured = posts.filter(post => post.featured);
+                const all = posts;
+
+                featured.forEach(post => {
+                    const postCard = createPostCard(post, 'featured');
+                    featuredPostsContainer.appendChild(postCard);
+                });
+
+                all.forEach(post => {
+                    const postCard = createPostCard(post, 'all');
+                    allPostsContainer.appendChild(postCard);
+                });
+            }
+
+            // Function to create a post card HTML element
+            function createPostCard(post, type) {
+                const isFeatured = type === 'featured';
+                const card = document.createElement('div');
+                card.classList.add('bg-white', 'rounded-xl', 'shadow-lg', 'overflow-hidden', 'transform', 'hover:scale-105', 'transition-transform', 'duration-300', 'cursor-pointer', 'fade-in');
+
+                let content = `
+                    <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">${post.title}</h3>
+                        <p class="text-sm text-gray-500 mb-4">By ${post.author} on ${post.date}</p>
+                        <p class="text-gray-600">${post.summary}</p>
+                    </div>
+                `;
+
+                if (!isFeatured) {
+                    content = `
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">${post.title}</h3>
+                            <p class="text-sm text-gray-500 mb-4">By ${post.author} on ${post.date}</p>
+                            <p class="text-gray-600">${post.summary}</p>
+                        </div>
+                    `;
+                    card.classList.remove('overflow-hidden');
+                }
+
+                card.innerHTML = content;
+                card.addEventListener('click', () => showPost(post.id));
+                return card;
+            }
+
+            // Function to show a single post
+            function showPost(postId) {
+                const post = posts.find(p => p.id === postId);
+                if (!post) return;
+
+                const postHtml = `
+                    <div class="space-y-6">
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">${post.title}</h1>
+                        <p class="text-lg text-gray-600">By ${post.author} on ${post.date}</p>
+                        <img src="${post.image}" alt="${post.title}" class="w-full h-auto rounded-lg shadow-md max-h-[400px] object-cover">
+                        <div class="blog-post-content text-gray-700 text-lg leading-relaxed">${post.content}</div>
+                    </div>
+                `;
+                postContent.innerHTML = postHtml;
+
+                mainContent.style.display = 'none';
+                postView.classList.remove('hidden');
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Function to go back to home page
+            function backToHome() {
+                postView.classList.add('hidden');
+                mainContent.style.display = 'block';
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Function to render reviews
+            function renderReviews() {
+                reviewsContainer.innerHTML = '';
+                reviews.forEach(review => {
+                    const reviewCard = document.createElement('div');
+                    reviewCard.classList.add('review-card', 'bg-white', 'rounded-lg', 'shadow-sm', 'p-4', 'fade-in');
+                    reviewCard.innerHTML = `
+                        <div class="flex items-center mb-2">
+                            <span class="text-xl text-yellow-400 mr-2">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</span>
+                            <h4 class="font-bold text-sm text-gray-800">${review.name}</h4>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1">${review.review}</p>
+                        <p class="text-xs text-gray-400">${review.date}</p>
+                    `;
+                    reviewsContainer.appendChild(reviewCard);
+                });
+            }
+
+            // Event listeners for navigation
+            backToHomeButton.addEventListener('click', backToHome);
+            homeLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                backToHome();
+            });
+
+            // Handle form submission for adding a new post
+            addPostForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const title = document.getElementById('post-title').value;
+                const author = document.getElementById('post-author').value;
+                const summary = document.getElementById('post-summary').value;
+                const content = document.getElementById('post-content-input').value;
+                const image = document.getElementById('post-image').value || 'https://images.pexels.com/photos/1591060/pexels-photo-1591060.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
+
+                if (!title || !author || !summary || !content) {
+                    addPostStatus.classList.remove('hidden', 'text-green-600');
+                    addPostStatus.classList.add('text-red-600');
+                    addPostStatus.textContent = 'Please fill out all required fields.';
+                    return;
+                }
+
+                const newPost = {
+                    id: String(posts.length + 1),
+                    title: title,
+                    author: author,
+                    date: new Date().toLocaleDateString('en-US', {
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric'
+                    }),
+                    summary: summary,
+                    content: `<p>${content}</p>`,
+                    image: image,
+                    featured: false
+                };
+
+                posts.unshift(newPost); // Add the new post to the beginning of the array
+                renderPosts();
+                addPostForm.reset();
+                addPostStatus.classList.remove('hidden', 'text-red-600');
+                addPostStatus.classList.add('text-green-600');
+                addPostStatus.textContent = 'Article added successfully!';
+
+                // Clear status message after 3 seconds
+                setTimeout(() => {
+                    addPostStatus.classList.add('hidden');
+                }, 3000);
+            });
+
+            // Handle form submission for adding a new review
+            addReviewForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('reviewer-name').value;
+                const rating = parseInt(document.getElementById('reviewer-rating').value);
+                const reviewText = document.getElementById('reviewer-text').value;
+
+                if (!name || !reviewText) {
+                    addReviewStatus.classList.remove('hidden', 'text-green-600');
+                    addReviewStatus.classList.add('text-red-600');
+                    addReviewStatus.textContent = 'Please fill out all required fields.';
+                    return;
+                }
+
+                const newReview = {
+                    name: name,
+                    rating: rating,
+                    review: reviewText,
+                    date: new Date().toLocaleDateString('en-US', {
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric'
+                    })
+                };
+
+                reviews.unshift(newReview);
+                renderReviews();
+                addReviewForm.reset();
+                addReviewStatus.classList.remove('hidden', 'text-red-600');
+                addReviewStatus.classList.add('text-green-600');
+                addReviewStatus.textContent = 'Review submitted successfully!';
+
+                setTimeout(() => {
+                    addReviewStatus.classList.add('hidden');
+                }, 3000);
+            });
+
+            // Handle clear post form button
+            clearFormButton.addEventListener('click', () => {
+                addPostForm.reset();
+                addPostStatus.classList.add('hidden');
+            });
+
+            // IntersectionObserver for dynamic transitions
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sectionsToAnimate = document.querySelectorAll('.transition-section');
+            sectionsToAnimate.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Initial render
+            renderPosts();
+            renderReviews();
+        });
+    </script>
+</body>
+
+</html>
+
