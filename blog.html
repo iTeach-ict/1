@@ -14,13 +14,13 @@
 </head>
 <body>
     <header>
-        <nav id="navbar">
-            <div class="logo"><a href="./index.html"><img src="logo_sm.png" width="150px" alt="logo"></a></div>
-        </nav>
+        
+            <div class="logo"><a href="./index.html"><img src="logo_sm.png"  alt="logo"></a></div>
+    
 
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#" id="homeLink"
-                class="text-2xl font-bold text-indigo-600 transition-colors duration-300 hover:text-indigo-800" style="color: white; font-size: 15px; background-color: antiquewhite; color: #6366f1; padding: 4px; border-radius: 6px 0px;">Home</a>
+                class="text-2xl font-bold text-indigo-600 transition-colors duration-300 hover:text-indigo-800" style="color: rgb(13, 7, 95); font-size: 15px; background-color: rgb(255, 255, 255), 255); padding-left: 10px; color: #6366f1; padding: 4px; border-radius: 6px 0px;">Home</a>
             <nav class="hidden md:flex space-x-6">
                 <a href="#featured"
                     class="text-gray-600 hover:text-indigo-600 transition-colors duration-300 font-medium" style="color: white;">Featured</a>
@@ -63,7 +63,7 @@
         }
 
         #navbar .logo{
-            padding-left:60px ;
+            padding-left:30px ;
             padding-top: 10px;
         }
 
@@ -127,6 +127,17 @@
         .review-card {
             border-left: 4px solid #6366f1;
         }
+
+        /* Responsive */
+@media (max-width: 768px) {
+
+         .logo a img{
+            padding-left: 100px;
+            padding-top: 20px;
+            
+        }
+  
+}
     </style>
 </head>
 
